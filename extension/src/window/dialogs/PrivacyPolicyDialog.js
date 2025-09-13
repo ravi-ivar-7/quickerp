@@ -85,9 +85,9 @@ class PrivacyPolicyDialog {
     }
 
     async openFullPrivacyPolicy() {
-        const { GITHUB_CONFIG } = await import('../../config/constants.js');
+        const { SITE_CONFIG } = await import('../../config/constants.js');
         chrome.tabs.create({
-            url: GITHUB_CONFIG.PRIVACY_POLICY_URL
+            url: SITE_CONFIG.SITE_URL + SITE_CONFIG.PRIVACY_PATH
         });
     }
 

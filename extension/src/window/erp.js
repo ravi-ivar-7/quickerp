@@ -214,12 +214,12 @@ class ERPApp {
                 }
             });
 
-            const siteLinks = document.querySelectorAll('[data-site-url]');
+            const siteLinks = document.querySelectorAll('[data-site-path]');
             
             siteLinks.forEach(link => {
-                const urlPath = link.getAttribute('data-site-url');
-                if (urlPath) {
-                    link.href = SITE_CONFIG.SITE_URL + urlPath;
+                const pathKey = link.getAttribute('data-site-path');
+                if (pathKey && SITE_CONFIG.hasOwnProperty(pathKey)) {
+                    link.href = SITE_CONFIG.SITE_URL + SITE_CONFIG[pathKey];
                 }
             });
         } catch (error) {

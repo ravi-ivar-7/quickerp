@@ -1,5 +1,21 @@
 /* Setup Screen Styles */
 
+/* Gmail requirement notice */
+.gmail-requirement {
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 8px;
+}
+
+.requirement-text {
+    margin: 0;
+    font-size: 13px;
+    color: #856404;
+    font-weight: 500;
+}
+
 /* Loading state for security questions */
 .loading-state {
     text-align: center;

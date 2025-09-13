@@ -106,6 +106,10 @@ export class DashboardController {
             console.log('View credentials button clicked');
             await this.showERPCredentialsDialog();
         });
+        
+        // Setup collapsible links
+        const linksHeader = document.getElementById('links-header');
+        linksHeader?.addEventListener('click', () => this.toggleLinksSection());
     }
 
     async startLogin() {
@@ -450,6 +454,16 @@ export class DashboardController {
         } catch (error) {
             console.error('Failed to show ERP credentials dialog:', error);
             this.app.showError(`Failed to load ERP credentials: ${error.message}`);
+        }
+    }
+
+    toggleLinksSection() {
+        const linksContent = document.getElementById('links-content');
+        const chevron = document.querySelector('.chevron');
+        
+        if (linksContent && chevron) {
+            linksContent.classList.toggle('collapsed');
+            chevron.classList.toggle('collapsed');
         }
     }
 

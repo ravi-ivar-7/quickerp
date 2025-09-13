@@ -128,10 +128,11 @@
             </div>
             
             <div class="links-card">
-                <div class="card-header">
+                <div class="card-header collapsible-header" id="links-header">
                     <h3>📚 Important Links</h3>
+                    <span class="chevron collapsed">▼</span>
                 </div>
-                <div class="card-body">
+                <div class="card-body collapsed" id="links-content">
                     <div class="links-grid">
                         <a href="#" data-github-url="REPOSITORY_URL" target="_blank" class="link-item">
                             <span class="link-icon">📂</span>
@@ -157,7 +158,7 @@
                             </div>
                         </a>
                         
-                        <a href="#" data-github-url="PRIVACY_POLICY_URL" target="_blank" class="link-item">
+                        <a href="#" data-site-path="PRIVACY_PATH" target="_blank" class="link-item">
                             <span class="link-icon">🔒</span>
                             <div class="link-content">
                                 <span class="link-title">Privacy Policy</span>
@@ -165,7 +166,23 @@
                             </div>
                         </a>
                         
-                        <a href="#" data-site-url="/contact" target="_blank" class="link-item">
+                        <a href="#" data-site-path="HOME_PATH" target="_blank" class="link-item">
+                            <span class="link-icon">🏠</span>
+                            <div class="link-content">
+                                <span class="link-title">Home</span>
+                                <span class="link-desc">Visit website</span>
+                            </div>
+                        </a>
+                        
+                        <a href="#" data-site-path="OAUTH_SETUP_PATH" target="_blank" class="link-item">
+                            <span class="link-icon">⚙️</span>
+                            <div class="link-content">
+                                <span class="link-title">OAuth Setup</span>
+                                <span class="link-desc">Configure Google OAuth</span>
+                            </div>
+                        </a>
+                        
+                        <a href="#" data-site-path="CONTACT_PATH" target="_blank" class="link-item">
                             <span class="link-icon">📞</span>
                             <div class="link-content">
                                 <span class="link-title">Contact</span>
@@ -173,7 +190,7 @@
                             </div>
                         </a>
                         
-                        <a href="#" data-site-url="/faqs" target="_blank" class="link-item">
+                        <a href="#" data-site-path="FAQS_PATH" target="_blank" class="link-item">
                             <span class="link-icon">❓</span>
                             <div class="link-content">
                                 <span class="link-title">FAQs</span>

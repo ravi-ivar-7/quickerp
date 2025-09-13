@@ -1,4 +1,50 @@
 /* Dashboard Screen Styles */
+
+/* Collapsible Links Section */
+.collapsible-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.collapsible-header:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+}
+
+.chevron {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    color: var(--accent-color, #3b82f6);
+    font-weight: bold;
+}
+
+.chevron.collapsed {
+    transform: rotate(-90deg);
+}
+
+.card-body.collapsed {
+    display: none;
+}
+
+.links-card {
+    margin-bottom: 0 !important;
+}
+
+.links-card .card-body {
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+.links-card .card-body.collapsed {
+    margin: 0;
+    padding: 0;
+    height: 0;
+}
 .dashboard-container {
     width: 100%;
     max-width: 460px;
@@ -713,7 +759,7 @@
     background: linear-gradient(135deg, rgba(0, 212, 255, 0.06), rgba(0, 153, 204, 0.03));
     border: 1.5px solid rgba(0, 212, 255, 0.15);
     border-radius: 12px;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     margin-top: 20px;
     position: relative;
     overflow: hidden;
