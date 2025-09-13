@@ -1,0 +1,79 @@
+<div class="screen" id="setup-screen">
+    <div class="setup-container">
+        <div class="setup-header">
+            <h1>Setup QuickERP</h1>
+            <div class="setup-progress">
+                <div class="progress-dots">
+                    <span class="dot active" data-step="1"></span>
+                    <span class="dot" data-step="2"></span>
+                    <span class="dot" data-step="3"></span>
+                </div>
+                <p class="step-info">Step <span id="current-step">1</span> of 3</p>
+            </div>
+        </div>
+        
+        <div class="setup-content">
+            <!-- Step 1: Credentials -->
+            <div class="step active" data-step="1">
+                <div class="step-header">
+                    <h2>🔐 ERP Credentials</h2>
+                    <p>Enter your IIT KGP ERP login details</p>
+                </div>
+                <form id="credentials-form" class="setup-form">
+                    <div class="form-group">
+                        <label for="roll-number">Roll Number</label>
+                        <input type="text" id="roll-number" placeholder="e.g., 22MA100xx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="password" placeholder="Your ERP password" required>
+                            <button type="button" class="password-toggle" id="password-toggle">👁️</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Step 2: Security Questions -->
+            <div class="step" data-step="2">
+                <div class="step-header">
+                    <h2>🛡️ Security Questions</h2>
+                    <p>Add your ERP security questions and answers</p>
+                </div>
+                <form id="security-form" class="setup-form">
+                    <div class="security-questions"></div>
+                    <button type="button" id="add-security-question" class="btn-secondary btn-small">+ Add Question</button>
+                </form>
+            </div>
+            
+            <!-- Step 3: Gmail Integration -->
+            <div class="step" data-step="3">
+                <div class="step-header">
+                    <h2>📧 Gmail Integration</h2>
+                    <p>Connect Gmail for automatic OTP retrieval</p>
+                </div>
+                <div class="gmail-setup">
+                    <div class="info-box">
+                        <p>Connect Gmail to automatically retrieve OTP codes during login.</p>
+                        <p class="oauth-info">Read-only access • Secure storage • Revocable anytime</p>
+                    </div>
+                    <div class="gmail-actions">
+                        <button id="gmail-connect" class="btn-primary">
+                            <span>🔗 Connect Gmail</span>
+                        </button>
+                        <a href="#" data-github-url="OAUTH_SETUP_URL" target="_blank" class="btn-secondary github-link">
+                            <span>⚙️ Setup Custom OAuth</span>
+                        </a>
+                    </div>
+                    <div class="gmail-status"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="setup-navigation sticky-bottom">
+            <button id="back-btn" class="btn-secondary" disabled>Back</button>
+            <button id="next-btn" class="btn-primary">Next</button>
+        </div>
+    </div>
+</div>
