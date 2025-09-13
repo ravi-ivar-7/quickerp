@@ -1,0 +1,14 @@
+{
+  "name": "quickerp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd server && npm run build",
+    "start": "cd server && npm start",
+    "dev": "cd server && npm run dev",
+    "install-backend": "cd server && npm install"
+  },
+  "workspaces": [
+    "server"
+  ]
+}
