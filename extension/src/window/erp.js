@@ -203,7 +203,7 @@ class ERPApp {
 
     async populateGitHubLinks() {
         try {
-            const { GITHUB_CONFIG } = await import('../config/constants.js');
+            const { GITHUB_CONFIG, SITE_CONFIG } = await import('../config/constants.js');
             
             const githubLinks = document.querySelectorAll('[data-github-url]');
             
@@ -211,6 +211,15 @@ class ERPApp {
                 const urlKey = link.getAttribute('data-github-url');
                 if (GITHUB_CONFIG[urlKey]) {
                     link.href = GITHUB_CONFIG[urlKey];
+                }
+            });
+
+            const siteLinks = document.querySelectorAll('[data-site-url]');
+            
+            siteLinks.forEach(link => {
+                const urlPath = link.getAttribute('data-site-url');
+                if (urlPath) {
+                    link.href = SITE_CONFIG.SITE_URL + urlPath;
                 }
             });
         } catch (error) {

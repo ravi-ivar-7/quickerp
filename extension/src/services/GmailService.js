@@ -8,8 +8,10 @@ export class GmailService {
             
             const token = await chrome.identity.getAuthToken({ interactive: true });
             if (!token) {
-                throw new Error('Authentication failed');
+                throw new Error('Authentication failed - no token received');
             }
+            
+            console.log('Token received:', typeof token, token);
             
             // Validate required permissions
             await this.validateRequiredPermissions(token);
@@ -25,10 +27,17 @@ export class GmailService {
             
             return gmailData;
         } catch (error) {
+            console.error('Gmail authentication error details:', error);
             if (error.message.includes('Gmail access is required')) {
                 throw error;
             }
-            throw new Error(ERROR_MESSAGES.GMAIL_AUTH_FAILED);
+            if (error.message.includes('OAuth2 not granted or revoked')) {
+                throw new Error('Gmail access was denied. Please grant Gmail permissions to use QuickERP.');
+            }
+            if (error.message.includes('The OAuth client was not found')) {
+                throw new Error('OAuth configuration error. Please check the extension setup.');
+            }
+            throw new Error(`${ERROR_MESSAGES.GMAIL_AUTH_FAILED}: ${error.message}`);
         }
     }
 

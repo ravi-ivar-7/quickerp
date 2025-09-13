@@ -60,6 +60,29 @@ export class DashboardController {
         }
     }
 
+    updateStatusIndicatorText(text) {
+        const statusText = document.querySelector('.status-text');
+        const statusDot = document.querySelector('.status-dot');
+        
+        if (statusText) {
+            statusText.textContent = text;
+        }
+        
+        // Update dot color based on status
+        if (statusDot) {
+            if (text.includes('failed') || text.includes('expired')) {
+                statusDot.style.background = 'var(--error, #ff4444)';
+            } else if (text.includes('Checking') || text.includes('Validating')) {
+                statusDot.style.background = 'var(--warning, #ffa500)';
+            } else if (text.includes('active') || text.includes('Ready')) {
+                statusDot.style.background = 'var(--success, #4CAF50)';
+            } else {
+                statusDot.style.background = 'var(--info, #2196F3)';
+            }
+        }
+    }
+
+
     setupEventListeners() {
         const loginBtn = document.getElementById('login-btn');
         loginBtn?.addEventListener('click', () => this.startLogin());
@@ -160,6 +183,9 @@ export class DashboardController {
 
     async checkERPSession() {
         try {
+            // Show loading status
+            this.updateStatusIndicatorText('Checking session...');
+            
             const { CredentialService } = await import('../services/CredentialService.js');
             const session = await CredentialService.getERPSession();
             
@@ -172,6 +198,8 @@ export class DashboardController {
             
             // Check if session exists and is valid via HTTP request
             if (session) {
+                this.updateStatusIndicatorText('Validating session...');
+                
                 const isValid = await CredentialService.isERPSessionValid();
                 
                 if (isValid && quickAccessCard) {
@@ -189,8 +217,11 @@ export class DashboardController {
                     if (loginBtnIcon) {
                         loginBtnIcon.textContent = '🔄';
                     }
+                    
+                    this.updateStatusIndicatorText('Session active');
                 } else {
                     // Session exists but is invalid, clear it
+                    this.updateStatusIndicatorText('Session expired, clearing...');
                     await CredentialService.clearERPSession();
                     
                     if (quickAccessCard) {
@@ -206,9 +237,14 @@ export class DashboardController {
                     if (loginBtnIcon) {
                         loginBtnIcon.textContent = '🚀';
                     }
+                    
+                    this.updateStatusIndicatorText('Ready for login');
                 }
-            } else if (quickAccessCard) {
-                quickAccessCard.classList.add('hidden');
+            } else {
+                // No session found
+                if (quickAccessCard) {
+                    quickAccessCard.classList.add('hidden');
+                }
                 
                 if (loginCardTitle) {
                     loginCardTitle.textContent = 'ERP Login';
@@ -219,9 +255,13 @@ export class DashboardController {
                 if (loginBtnIcon) {
                     loginBtnIcon.textContent = '🚀';
                 }
+                
+                this.updateStatusIndicatorText('Ready for login');
             }
         } catch (error) {
             console.error('Failed to check ERP session:', error);
+            this.updateStatusIndicatorText('Session check failed');
+            this.app.showError('Failed to check session status: ' + error.message);
         }
     }
 

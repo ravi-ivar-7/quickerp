@@ -28,18 +28,24 @@ export const STORAGE_KEYS = {
 
 export const UI_CONFIG = {
     WINDOW_WIDTH: 480,
-    WINDOW_HEIGHT: 600,
+    WINDOW_HEIGHT: 800,
     ANIMATION_DURATION: 300,
     OTP_TIMEOUT: 300000
 };
 
 
 export const GITHUB_CONFIG = {
-    REPOSITORY_URL: 'https://github.com/ravi-ivar-7/erp-auto-auth',
-    ISSUES_URL: 'https://github.com/ravi-ivar-7/erp-auto-auth/issues',
-    DISCUSSIONS_URL: 'https://github.com/ravi-ivar-7/erp-auto-auth/discussions',
-    PRIVACY_POLICY_URL: 'https://github.com/ravi-ivar-7/erp-auto-auth/blob/master/docs/privacy.md',
-    OAUTH_SETUP_URL: 'https://github.com/ravi-ivar-7/erp-auto-auth/blob/master/docs/google-oauth-setup.md'
+    REPOSITORY_URL: 'https://github.com/ravi-ivar-7/quickerp',
+    ISSUES_URL: 'https://github.com/ravi-ivar-7/quickerp/issues',
+    DISCUSSIONS_URL: 'https://github.com/ravi-ivar-7/quickerp/discussions',
+    PRIVACY_POLICY_URL: 'https://quickerp.rknain.com/privacy',
+    OAUTH_SETUP_URL: 'https://github.com/ravi-ivar-7/quickerp/blob/master/docs/google-oauth-setup.md'
+};
+
+export const SITE_CONFIG = {
+    SITE_URL: 'https://quickerp.rknain.com',
+    EXTENSION_URL: 'https://chromewebstore.google.com/detail/quickerp/gafmfinhhfaocnchccamogkeemjfboin',
+    CONTACT_EMAIL: 'quickerp.rknain.com'
 };
 
 export const ERROR_MESSAGES = {
