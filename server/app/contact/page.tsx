@@ -3,17 +3,42 @@ import { Metadata } from 'next'
 import { config } from '@/lib/config'
 
 export const metadata: Metadata = {
-  title: 'Contact & Support - QuickERP',
-  description: 'Get help and support for QuickERP Chrome extension. Contact us via email, GitHub issues, or browse our comprehensive FAQ section.',
-  keywords: ['QuickERP support', 'contact QuickERP', 'ERP help', 'Chrome extension support', 'IIT Kharagpur ERP support'],
+  title: 'Contact & Support - QuickERP Chrome Extension',
+  description: 'Get help and support for QuickERP Chrome extension. Contact us via email, GitHub issues, or browse our comprehensive FAQ section for IIT Kharagpur ERP automation.',
+  keywords: [
+    'QuickERP support',
+    'contact QuickERP',
+    'ERP help',
+    'Chrome extension support',
+    'IIT Kharagpur ERP support',
+    'QuickERP contact',
+    'ERP automation help',
+    'Gmail OTP support',
+    'Chrome extension issues',
+    'QuickERP troubleshooting'
+  ],
+  authors: [{ name: 'QuickERP Team', url: 'https://quickerp.rknain.com' }],
   openGraph: {
-    title: 'Contact & Support - QuickERP',
+    title: 'Contact & Support - QuickERP Chrome Extension',
     description: 'Get help and support for QuickERP Chrome extension. Contact us via email, GitHub issues, or browse our comprehensive FAQ section.',
     type: 'website',
+    images: [
+      {
+        url: '/images/extension-main.png',
+        width: 1200,
+        height: 630,
+        alt: 'QuickERP Chrome Extension Support',
+      },
+    ],
   },
   twitter: {
-    title: 'Contact & Support - QuickERP',
-    description: 'Get help and support for QuickERP Chrome extension. Contact us via email, GitHub issues, or browse our comprehensive FAQ section.',
+    card: 'summary_large_image',
+    title: 'Contact & Support - QuickERP Chrome Extension',
+    description: 'Get help and support for QuickERP Chrome extension. Contact us via email, GitHub issues, or browse our FAQ section.',
+    images: ['/images/extension-main.png'],
+  },
+  alternates: {
+    canonical: '/contact',
   },
 }
 

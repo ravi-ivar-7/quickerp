@@ -1,18 +1,18 @@
-// Configuration constants - all values should come from environment variables
+
 export const config = {
   site: {
-    url: process.env.NEXT_PUBLIC_SITE_URL!,
+    url: process.env.NEXT_PUBLIC_SITE_URL! || 'https://quickerp.rknain.com',
     name: 'QuickERP - Fast, Secure Login for IIT Kharagpur ERP',
     description: 'Chrome extension that automates your ERP login with Gmail OTP integration. One-click access to your IIT KGP ERP account with bank-level security.',
   },
   contact: {
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL!,
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL! || 'quickerp@rknain.com',
   },
   github: {
-    url: process.env.NEXT_PUBLIC_GITHUB_URL!,
+    url: process.env.NEXT_PUBLIC_GITHUB_URL! || 'https://github.com/quickerp',
   },
   extension: {
-    url: process.env.NEXT_PUBLIC_EXTENSION_URL!,
+    url: process.env.NEXT_PUBLIC_EXTENSION_URL! || 'https://chromewebstore.google.com/detail/quickerp/gafmfinhhfaocnchccamogkeemjfboin',
   },
 } as const
 

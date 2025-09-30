@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Search, ChevronDown, ChevronUp, HelpCircle, Shield, Lock, Zap, Mail, Github, ExternalLink } from 'lucide-react'
 import { config } from '@/lib/config'
+import { faqStructuredData } from './metadata'
 
 const HighlightedText = ({ text, searchTerm }: { text: string; searchTerm: string }) => {
   if (!searchTerm) return <span>{text}</span>
@@ -119,6 +120,13 @@ export default function FAQsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-20">
+      {/* FAQ Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqStructuredData),
+        }}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-20">

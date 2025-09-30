@@ -12,6 +12,15 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/oauth-setup',
+        destination: '/blogs/oauth',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

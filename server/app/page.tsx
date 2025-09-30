@@ -1,18 +1,84 @@
-'use client'
-
-import { useState } from 'react'
+import { Metadata } from 'next'
 import { Download, Shield, Zap, Clock, Github, ExternalLink, CheckCircle, ArrowRight, Star, Users, Lock , Mail, Chrome, Key} from 'lucide-react'
 import { config } from '@/lib/config'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-export default function HomePage() {
-  const [isLoading, setIsLoading] = useState(false)
 
-  const handleInstallExtension = () => {
-    setIsLoading(true)
-    window.open(config.extension.url, '_blank')
-    setTimeout(() => setIsLoading(false), 1000)
+export const metadata: Metadata = {
+  title: 'QuickERP - Fast, Secure Login for IIT Kharagpur ERP',
+  description: 'Chrome extension that automates your ERP login with Gmail OTP integration. One-click access to your IIT KGP ERP account with bank-level security and AES-GCM encryption.',
+  keywords: [
+    'QuickERP',
+    'IIT Kharagpur ERP',
+    'Chrome Extension',
+    'ERP Automation',
+    'Auto Login',
+    'OTP Integration',
+    'Gmail OTP',
+    'IIT KGP',
+    'Student Portal',
+    'AES Encryption',
+    'Secure Login',
+    'One Click Login',
+    'ERP Assistant',
+    'Academic Portal',
+    'IIT Kharagpur login',
+    'ERP chrome extension',
+    'automated login',
+    'secure credentials'
+  ],
+  authors: [{ name: 'QuickERP Team', url: 'https://quickerp.rknain.com' }],
+  openGraph: {
+    title: 'QuickERP - Fast, Secure Login for IIT Kharagpur ERP',
+    description: 'Chrome extension that automates your ERP login with Gmail OTP integration. One-click access with bank-level security.',
+    type: 'website',
+    images: [
+      {
+        url: '/images/extension-main.png',
+        width: 1200,
+        height: 630,
+        alt: 'QuickERP Chrome Extension - Automated IIT Kharagpur ERP Login',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'QuickERP - Fast, Secure Login for IIT Kharagpur ERP',
+    description: 'Chrome extension for automated ERP login with Gmail OTP integration and bank-level security.',
+    images: ['/images/extension-main.png'],
+  },
+  alternates: {
+    canonical: '/',
+  },
+}
+
+// Home Page Structured Data
+const homePageStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "QuickERP",
+  "description": "Chrome extension that automates IIT Kharagpur ERP login with Gmail OTP integration and AES-GCM encryption",
+  "url": "https://quickerp.rknain.com",
+  "applicationCategory": "BrowserApplication",
+  "operatingSystem": "Chrome",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "QuickERP Team",
+    "url": "https://quickerp.rknain.com"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
   }
+}
+
+export default function HomePage() {
 
   const features = [
     {
@@ -61,6 +127,13 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50">
+      {/* Home Page Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homePageStructuredData),
+        }}
+      />
       {/* Hero Section */}
       <section className="pt-20 pb-8 sm:pt-24 lg:pb-24 min-h-[calc(100vh-4rem)] sm:min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Background Pattern */}
@@ -95,10 +168,12 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 lg:mb-12">
-                <Button size="lg" onClick={handleInstallExtension} disabled={isLoading} className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-xl py-4 px-8 text-lg font-semibold rounded-2xl transform hover:scale-105 transition-all">
-                  <Chrome className="mr-3 h-5 w-5" />
-                  Install Extension
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" asChild className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-xl py-4 px-8 text-lg font-semibold rounded-2xl transform hover:scale-105 transition-all">
+                  <Link href={config.extension.url} target="_blank" rel="noopener noreferrer">
+                    <Chrome className="mr-3 h-5 w-5" />
+                    Install Extension
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild className="w-full sm:w-auto bg-white/80 backdrop-blur-sm border-slate-200 text-slate-700 hover:bg-white hover:shadow-lg py-4 px-8 text-lg font-semibold rounded-2xl transition-all">
                   <Link href="#features">

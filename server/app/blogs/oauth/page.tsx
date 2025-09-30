@@ -1,11 +1,130 @@
-'use client'
-
+import type { Metadata } from 'next'
 import { Settings, Cloud, Shield, Key, Users, ExternalLink, CheckCircle, AlertTriangle, Code, Globe, Mail, Github } from 'lucide-react'
 import { config } from '@/lib/config'
 
+export const metadata: Metadata = {
+  title: 'Google OAuth2 Setup Guide - QuickERP Chrome Extension',
+  description: 'Complete step-by-step guide to configure Google OAuth2 client ID for QuickERP Chrome extension. Enable Gmail OTP integration for automated IIT Kharagpur ERP login.',
+  keywords: [
+    'Google OAuth2 setup',
+    'Chrome extension OAuth',
+    'Gmail API setup',
+    'Google Cloud Console',
+    'OAuth client ID',
+    'QuickERP OAuth',
+    'Chrome extension development',
+    'Gmail integration guide',
+    'Google API configuration',
+    'OAuth consent screen',
+    'Chrome extension permissions',
+    'Google OAuth tutorial'
+  ],
+  authors: [{ name: 'QuickERP Team', url: 'https://quickerp.rknain.com' }],
+  openGraph: {
+    title: 'Google OAuth2 Setup Guide - QuickERP Chrome Extension',
+    description: 'Complete step-by-step guide to configure Google OAuth2 client ID for QuickERP Chrome extension with Gmail OTP integration.',
+    type: 'article',
+    publishedTime: '2024-09-30T00:00:00.000Z',
+    authors: ['QuickERP Team'],
+    images: [
+      {
+        url: '/images/extension-main.png',
+        width: 1200,
+        height: 630,
+        alt: 'QuickERP Chrome Extension OAuth Setup',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Google OAuth2 Setup Guide - QuickERP Chrome Extension',
+    description: 'Complete guide to configure Google OAuth2 for QuickERP Chrome extension with Gmail integration.',
+    images: ['/images/extension-main.png'],
+  },
+  alternates: {
+    canonical: '/blogs/oauth',
+  },
+}
+
+// Structured data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Set Up Google OAuth2 for QuickERP Chrome Extension",
+  "description": "Complete guide to configure Google OAuth2 client ID for QuickERP Chrome extension with Gmail OTP integration",
+  "image": "/images/extension-main.png",
+  "totalTime": "PT15M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Google Account"
+    },
+    {
+      "@type": "HowToSupply", 
+      "name": "Google Cloud Console Access"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "QuickERP Chrome Extension"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Google Cloud Console"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Chrome Browser"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Create Google Cloud Project",
+      "text": "Create a new project in Google Cloud Console for your QuickERP extension",
+      "url": "https://console.cloud.google.com/"
+    },
+    {
+      "@type": "HowToStep", 
+      "name": "Enable Required APIs",
+      "text": "Enable Gmail API and Google+ API for user profile and email access",
+      "url": "https://console.cloud.google.com/apis/library"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Configure OAuth Consent Screen", 
+      "text": "Set up OAuth consent screen with required scopes and app information",
+      "url": "https://console.cloud.google.com/apis/credentials/consent"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Create OAuth2 Client ID", 
+      "text": "Generate OAuth2 client ID for Chrome extension integration",
+      "url": "https://console.cloud.google.com/apis/credentials"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Update Extension Manifest", 
+      "text": "Add the OAuth2 client ID to your Chrome extension's manifest.json file"
+    }
+  ]
+}
+
 export default function OAuthSetupPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
@@ -370,6 +489,7 @@ export default function OAuthSetupPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

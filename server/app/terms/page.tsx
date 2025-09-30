@@ -3,23 +3,93 @@ import { Metadata } from 'next'
 import { config } from '@/lib/config'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - QuickERP',
-  description: 'Terms and conditions for using QuickERP Chrome extension. Learn about user responsibilities, privacy, and service limitations.',
-  keywords: ['QuickERP terms', 'terms of service', 'Chrome extension terms', 'IIT Kharagpur ERP terms', 'user agreement'],
+  title: 'Terms of Service - QuickERP Chrome Extension',
+  description: 'Terms and conditions for using QuickERP Chrome extension. Learn about user responsibilities, privacy, data security, and service limitations for IIT Kharagpur ERP automation.',
+  keywords: [
+    'QuickERP terms of service',
+    'Chrome extension terms',
+    'IIT Kharagpur ERP terms',
+    'user agreement',
+    'privacy policy',
+    'data security terms',
+    'Chrome extension legal',
+    'ERP automation terms',
+    'Gmail OAuth terms',
+    'local storage policy'
+  ],
+  authors: [{ name: 'QuickERP Team', url: 'https://quickerp.rknain.com' }],
   openGraph: {
-    title: 'Terms of Service - QuickERP',
+    title: 'Terms of Service - QuickERP Chrome Extension',
     description: 'Terms and conditions for using QuickERP Chrome extension. Learn about user responsibilities, privacy, and service limitations.',
     type: 'website',
+    images: [
+      {
+        url: '/images/extension-main.png',
+        width: 1200,
+        height: 630,
+        alt: 'QuickERP Chrome Extension Terms of Service',
+      },
+    ],
   },
   twitter: {
-    title: 'Terms of Service - QuickERP',
-    description: 'Terms and conditions for using QuickERP Chrome extension. Learn about user responsibilities, privacy, and service limitations.',
+    card: 'summary_large_image',
+    title: 'Terms of Service - QuickERP Chrome Extension',
+    description: 'Terms and conditions for using QuickERP Chrome extension and ERP automation.',
+    images: ['/images/extension-main.png'],
   },
+  alternates: {
+    canonical: '/terms',
+  },
+}
+
+// Terms of Service Structured Data
+const termsStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Terms of Service - QuickERP Chrome Extension",
+  "description": "Terms and conditions for using QuickERP Chrome extension for IIT Kharagpur ERP automation",
+  "url": "https://quickerp.rknain.com/terms",
+  "mainEntity": {
+    "@type": "TermsOfService",
+    "name": "QuickERP Terms of Service",
+    "text": "Terms and conditions for using QuickERP Chrome extension. Covers user responsibilities, privacy, data security, and service limitations.",
+    "dateModified": "2025-08-29",
+    "version": "1.0.0",
+    "provider": {
+      "@type": "Organization",
+      "name": "QuickERP Team",
+      "url": "https://quickerp.rknain.com"
+    }
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://quickerp.rknain.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Terms of Service",
+        "item": "https://quickerp.rknain.com/terms"
+      }
+    ]
+  }
 }
 
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-20">
+      {/* Terms Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(termsStructuredData),
+        }}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">

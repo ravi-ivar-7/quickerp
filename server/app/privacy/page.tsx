@@ -1,7 +1,46 @@
-'use client'
-
+import type { Metadata } from 'next'
 import { Shield, Lock, Eye, Database, Mail, Github, ExternalLink, FileText } from 'lucide-react'
 import { config } from '@/lib/config'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy - QuickERP Chrome Extension',
+  description: 'QuickERP privacy policy and data protection practices. Learn how we protect your IIT Kharagpur ERP credentials with AES-GCM encryption and local storage.',
+  keywords: [
+    'QuickERP privacy policy',
+    'Chrome extension privacy',
+    'data protection',
+    'AES-GCM encryption',
+    'local storage security',
+    'Gmail privacy',
+    'ERP data security',
+    'no data collection',
+    'privacy first',
+    'secure credentials'
+  ],
+  authors: [{ name: 'QuickERP Team', url: 'https://quickerp.rknain.com' }],
+  openGraph: {
+    title: 'Privacy Policy - QuickERP Chrome Extension',
+    description: 'QuickERP privacy policy and data protection practices. Learn how we protect your ERP credentials with encryption and local storage.',
+    type: 'article',
+    images: [
+      {
+        url: '/images/extension-main.png',
+        width: 1200,
+        height: 630,
+        alt: 'QuickERP Chrome Extension Privacy Policy',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy - QuickERP Chrome Extension',
+    description: 'Learn how QuickERP protects your ERP credentials with AES-GCM encryption and local storage.',
+    images: ['/images/extension-main.png'],
+  },
+  alternates: {
+    canonical: '/privacy',
+  },
+}
 
 export default function PrivacyPage() {
   return (

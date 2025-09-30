@@ -94,12 +94,15 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-slate-200/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} QuickERP. Made for IIT Kharagpur students with ❤️
+            © {new Date().getFullYear()} QuickERP.
           </p>
           <div className="flex items-center gap-6 text-sm text-slate-500">
             <span>No Data Collection</span>
           </div>
         </div>
+        <p className=" text-center">
+          Peace
+        </p>
       </div>
     </footer>
   )
