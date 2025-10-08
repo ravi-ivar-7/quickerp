@@ -112,104 +112,104 @@ export default function SetupGuidePage() {
       
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50">
         {/* Hero Section */}
-        <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-5 py-3 mb-8 shadow-lg border border-blue-200/50">
-                <Shield className="h-4 w-4 text-blue-600" />
-                <span className="text-sm font-semibold text-blue-800">Setup Guide</span>
+        <section className="pt-16 sm:pt-20 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="max-w-full sm:max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12">
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full px-4 py-2 sm:px-5 sm:py-3 mb-4 sm:mb-6 md:mb-8 shadow-lg border border-blue-200/50">
+                <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600" />
+                <span className="text-xs sm:text-sm font-semibold text-blue-800">Setup Guide</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent leading-tight px-2">
                 Set Up QuickERP in 5 Minutes
               </h1>
               
-              <p className="text-xl sm:text-2xl text-slate-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4">
                 Complete guide to automate your IIT Kharagpur ERP login with Gmail OTP integration. 
                 <span className="font-semibold text-blue-600"> No more OTP headaches!</span>
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Button size="lg" asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-xl py-4 px-8 text-lg font-semibold rounded-2xl">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8 md:mb-12">
+                <Button size="lg" asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-xl py-3 px-6 sm:py-4 sm:px-8 text-base sm:text-lg font-semibold rounded-xl sm:rounded-2xl">
                   <Link href={config.extension.url} target="_blank">
-                    <Download className="mr-3 h-5 w-5" />
+                    <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
                     Install Extension
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Link>
                 </Button>
               </div>
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center">
-                <Clock className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-slate-900 mb-1">2 Minutes</div>
-                <div className="text-slate-600">Setup Time</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 md:mb-16">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white/50 text-center">
+                <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 mx-auto mb-2 sm:mb-3" />
+                <div className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">2 Minutes</div>
+                <div className="text-sm sm:text-base text-slate-600">Setup Time</div>
               </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center">
-                <Shield className="h-8 w-8 text-emerald-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-slate-900 mb-1">AES-GCM</div>
-                <div className="text-slate-600">Encryption</div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white/50 text-center">
+                <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600 mx-auto mb-2 sm:mb-3" />
+                <div className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">AES-GCM</div>
+                <div className="text-sm sm:text-base text-slate-600">Encryption</div>
               </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 text-center">
-                <CheckCircle className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                <div className="text-2xl font-bold text-slate-900 mb-1">1-Click</div>
-                <div className="text-slate-600">Auto Login</div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white/50 text-center">
+                <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-purple-600 mx-auto mb-2 sm:mb-3" />
+                <div className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">1-Click</div>
+                <div className="text-sm sm:text-base text-slate-600">Auto Login</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Prerequisites Section */}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+        <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
+          <div className="max-w-full sm:max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent px-2">
               What You'll Need
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
-                <Chrome className="h-10 w-10 text-blue-600 mb-4" />
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Chrome Browser</h3>
-                <p className="text-slate-600">Latest version of Google Chrome with extension support</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-200">
+                <Chrome className="h-8 w-8 sm:h-10 sm:w-10 text-blue-600 mb-3 sm:mb-4" />
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Chrome Browser</h3>
+                <p className="text-sm sm:text-base text-slate-600">Latest version of Google Chrome with extension support</p>
               </div>
-              <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-6 border border-emerald-200">
-                <Mail className="h-10 w-10 text-emerald-600 mb-4" />
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Gmail Account</h3>
-                <p className="text-slate-600">Gmail account for automatic OTP retrieval</p>
+              <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-emerald-200">
+                <Mail className="h-8 w-8 sm:h-10 sm:w-10 text-emerald-600 mb-3 sm:mb-4" />
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Gmail Account</h3>
+                <p className="text-sm sm:text-base text-slate-600">Gmail account for automatic OTP retrieval</p>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
-                <Key className="h-10 w-10 text-purple-600 mb-4" />
-                <h3 className="text-xl font-bold text-slate-900 mb-2">ERP Credentials</h3>
-                <p className="text-slate-600">Your IIT Kharagpur ERP login credentials</p>
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-purple-200">
+                <Key className="h-8 w-8 sm:h-10 sm:w-10 text-purple-600 mb-3 sm:mb-4" />
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">ERP Credentials</h3>
+                <p className="text-sm sm:text-base text-slate-600">Your IIT Kharagpur ERP login credentials</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Step-by-Step Guide */}
-        <section className="py-16 px-4 bg-gradient-to-br from-slate-50 to-white">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+        <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-gradient-to-br from-slate-50 to-white">
+          <div className="max-w-full sm:max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12 text-center bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent px-2">
               Step-by-Step Setup Guide
             </h2>
 
             {/* Step 1 */}
-            <div className="mb-16">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+            <div className="mb-8 sm:mb-12 md:mb-16">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mr-3 sm:mr-4 flex-shrink-0">
                   1
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">Accept Privacy Policy & Enter Credentials</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">Accept Privacy Policy & Enter Credentials</h3>
               </div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 mb-6">
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-slate-700 leading-relaxed mb-4">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-slate-200 mb-4 sm:mb-6">
+                <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
+                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-3 sm:mb-4">
                     After installing the extension, click on the QuickERP icon in your Chrome toolbar. You'll see the welcome screen with our privacy policy.
                   </p>
-                  <ul className="text-slate-700 space-y-2">
+                  <ul className="text-sm sm:text-base text-slate-700 space-y-2">
                     <li><strong>Read and accept</strong> the privacy policy</li>
                     <li><strong>Enter your ERP roll number</strong></li>
                     <li><strong>Enter your ERP password</strong></li>
@@ -220,42 +220,42 @@ export default function SetupGuidePage() {
             </div>
 
             {/* Step 2 */}
-            <div className="mb-16">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+            <div className="mb-8 sm:mb-12 md:mb-16">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mr-3 sm:mr-4 flex-shrink-0">
                   2
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">Add Security Questions & Answers</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">Add Security Questions & Answers</h3>
               </div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 mb-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-slate-200 mb-4 sm:mb-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-start">
                   <div className="order-2 lg:order-1">
                     <Image
                       src="/images/setup/02 sec qna.png"
                       alt="Security Questions and Answers Setup Screen"
                       width={400}
                       height={250}
-                      className="w-full rounded-xl shadow-md"
+                      className="w-full rounded-lg sm:rounded-xl shadow-md"
                     />
                   </div>
-                  <div className="order-1 lg:order-2 prose prose-lg max-w-none">
-                    <p className="text-slate-700 leading-relaxed mb-4">
+                  <div className="order-1 lg:order-2 prose prose-sm sm:prose-base md:prose-lg max-w-none">
+                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-3 sm:mb-4">
                       The ERP system asks security questions during login. QuickERP automates this process by storing your answers securely.
                     </p>
-                    <ul className="text-slate-700 space-y-2">
+                    <ul className="text-sm sm:text-base text-slate-700 space-y-2">
                       <li><strong>Add your security questions</strong> exactly as they appear in ERP</li>
                       <li><strong>Enter the corresponding answers</strong> for each question</li>
                       <li>You can add <strong>multiple question-answer pairs</strong></li>
                       <li>All answers are <strong>encrypted and stored locally</strong> on your device</li>
                     </ul>
                     
-                    <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-6">
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg sm:rounded-xl p-3 sm:p-4 mt-4 sm:mt-6">
                       <div className="flex items-start">
-                        <AlertTriangle className="h-5 w-5 text-amber-600 mr-3 mt-0.5 flex-shrink-0" />
+                        <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-amber-600 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="text-amber-800 font-medium mb-1">Important:</p>
-                          <p className="text-amber-700 text-sm">Make sure to enter your security questions and answers exactly as they appear in your ERP account to ensure successful automation.</p>
+                          <p className="text-sm sm:text-base text-amber-800 font-medium mb-1">Important:</p>
+                          <p className="text-xs sm:text-sm text-amber-700">Make sure to enter your security questions and answers exactly as they appear in your ERP account to ensure successful automation.</p>
                         </div>
                       </div>
                     </div>
@@ -265,30 +265,30 @@ export default function SetupGuidePage() {
             </div>
 
             {/* Step 3 */}
-            <div className="mb-16">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+            <div className="mb-8 sm:mb-12 md:mb-16">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mr-3 sm:mr-4 flex-shrink-0">
                   3
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">Connect Your Gmail Account</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">Connect Your Gmail Account</h3>
               </div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 mb-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-slate-200 mb-4 sm:mb-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-start">
                   <div className="order-2 lg:order-1">
                     <Image
                       src="/images/setup/03 connect gmail.png"
                       alt="Gmail Connection Setup Screen"
                       width={600}
                       height={400}
-                      className="w-full rounded-xl shadow-md"
+                      className="w-full rounded-lg sm:rounded-xl shadow-md"
                     />
                   </div>
-                  <div className="order-1 lg:order-2 prose prose-lg max-w-none">
-                    <p className="text-slate-700 leading-relaxed mb-4">
+                  <div className="order-1 lg:order-2 prose prose-sm sm:prose-base md:prose-lg max-w-none">
+                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-3 sm:mb-4">
                       To enable automatic OTP retrieval, you need to connect your Gmail account where you receive ERP OTP emails.
                     </p>
-                    <ul className="text-slate-700 space-y-2">
+                    <ul className="text-sm sm:text-base text-slate-700 space-y-2">
                       <li><strong>Click "Connect Gmail"</strong> to start the OAuth process</li>
                       <li>You'll be redirected to <strong>Google's secure login page</strong></li>
                       <li>QuickERP only requests <strong>read-only access</strong> to your Gmail</li>
@@ -300,46 +300,46 @@ export default function SetupGuidePage() {
             </div>
 
             {/* Step 4 */}
-            <div className="mb-16">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+            <div className="mb-8 sm:mb-12 md:mb-16">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mr-3 sm:mr-4 flex-shrink-0">
                   4
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">Handle Security Warnings</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">Handle Security Warnings</h3>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-slate-200">
                   <Image
                     src="/images/setup/04  warning.png"
                     alt="Google Security Warning Screen"
                     width={350}
                     height={250}
-                    className="w-full rounded-xl shadow-md mb-4"
+                    className="w-full rounded-lg sm:rounded-xl shadow-md mb-3 sm:mb-4"
                   />
-                  <h4 className="text-lg font-bold text-slate-900 mb-2">Security Warning</h4>
-                  <p className="text-slate-600 text-sm">Google shows this warning for unverified apps. This is normal for development extensions.</p>
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">Security Warning</h4>
+                  <p className="text-sm text-slate-600">Google shows this warning for unverified apps. This is normal for development extensions.</p>
                 </div>
                 
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-slate-200">
                   <Image
                     src="/images/setup/05 accept warning.png"
                     alt="Accept Security Warning Screen"
                     width={350}
                     height={250}
-                    className="w-full rounded-xl shadow-md mb-4"
+                    className="w-full rounded-lg sm:rounded-xl shadow-md mb-3 sm:mb-4"
                   />
-                  <h4 className="text-lg font-bold text-slate-900 mb-2">Accept Warning</h4>
-                  <p className="text-slate-600 text-sm">Click "Advanced" and then "Go to QuickERP (unsafe)" to continue with the setup.</p>
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">Accept Warning</h4>
+                  <p className="text-sm text-slate-600">Click "Advanced" and then "Go to QuickERP (unsafe)" to continue with the setup.</p>
                 </div>
               </div>
               
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg sm:rounded-xl p-4 sm:p-6">
                 <div className="flex items-start">
-                  <Shield className="h-6 w-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-blue-800 font-medium mb-2">Why do I see this warning?</p>
-                    <p className="text-blue-700 text-sm leading-relaxed">
+                    <p className="text-sm sm:text-base text-blue-800 font-medium mb-2">Why do I see this warning?</p>
+                    <p className="text-xs sm:text-sm text-blue-700 leading-relaxed">
                       Google shows security warnings for unverified applications. QuickERP is safe to use - it's open source, 
                       processes everything locally, and only accesses your Gmail to read OTP emails from the ERP system. 
                       The warning appears because we haven't gone through Google's verification process yet.
@@ -350,42 +350,42 @@ export default function SetupGuidePage() {
             </div>
 
             {/* Step 5 */}
-            <div className="mb-16">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+            <div className="mb-8 sm:mb-12 md:mb-16">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mr-3 sm:mr-4 flex-shrink-0">
                   5
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">Complete Gmail Authorization</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">Complete Gmail Authorization</h3>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-slate-200">
                   <Image
                     src="/images/setup/06 continue signing.png"
                     alt="Continue Signing In Screen"
                     width={350}
                     height={250}
-                    className="w-full rounded-xl shadow-md mb-4"
+                    className="w-full rounded-lg sm:rounded-xl shadow-md mb-3 sm:mb-4"
                   />
-                  <h4 className="text-lg font-bold text-slate-900 mb-2">Continue Signing In</h4>
-                  <p className="text-slate-600 text-sm">Proceed with the Google sign-in process using your Gmail account.</p>
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">Continue Signing In</h4>
+                  <p className="text-sm text-slate-600">Proceed with the Google sign-in process using your Gmail account.</p>
                 </div>
                 
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-slate-200">
                   <Image
                     src="/images/setup/07 allow gmail access.png"
                     alt="Allow Gmail Access Screen"
                     width={350}
                     height={250}
-                    className="w-full rounded-xl shadow-md mb-4"
+                    className="w-full rounded-lg sm:rounded-xl shadow-md mb-3 sm:mb-4"
                   />
-                  <h4 className="text-lg font-bold text-slate-900 mb-2">Grant Permissions</h4>
-                  <p className="text-slate-600 text-sm">Allow QuickERP to read your Gmail for OTP extraction. We only access ERP-related emails.</p>
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2">Grant Permissions</h4>
+                  <p className="text-sm text-slate-600">Allow QuickERP to read your Gmail for OTP extraction. We only access ERP-related emails.</p>
                 </div>
               </div>
               
-              <div className="prose prose-lg max-w-none">
-                <ul className="text-slate-700 space-y-2">
+              <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
+                <ul className="text-sm sm:text-base text-slate-700 space-y-2">
                   <li><strong>Sign in with your Gmail account</strong> that receives ERP OTPs</li>
                   <li><strong>Review the permissions</strong> - QuickERP only requests Gmail read access</li>
                   <li><strong>Click "Allow"</strong> to grant the necessary permissions</li>
@@ -395,36 +395,36 @@ export default function SetupGuidePage() {
             </div>
 
             {/* Step 6 */}
-            <div className="mb-16">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+            <div className="mb-8 sm:mb-12 md:mb-16">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mr-3 sm:mr-4 flex-shrink-0">
                   6
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">Setup Complete! 🎉</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">Setup Complete! 🎉</h3>
               </div>
               
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 mb-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-slate-200 mb-4 sm:mb-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-start">
                   <div className="order-2 lg:order-1">
                     <Image
                       src="/images/setup/08 setup complete.png"
                       alt="Setup Complete Success Screen"
                       width={600}
                       height={400}
-                      className="w-full rounded-xl shadow-md"
+                      className="w-full rounded-lg sm:rounded-xl shadow-md"
                     />
                   </div>
-                  <div className="order-1 lg:order-2 prose prose-lg max-w-none">
-                    <p className="text-slate-700 leading-relaxed mb-4">
+                  <div className="order-1 lg:order-2 prose prose-sm sm:prose-base md:prose-lg max-w-none">
+                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-3 sm:mb-4">
                       Congratulations! Your QuickERP extension is now fully configured and ready to automate your ERP login process.
                     </p>
                     
-                    <div className="bg-green-50 border border-green-200 rounded-xl p-6 mt-6">
+                    <div className="bg-green-50 border border-green-200 rounded-lg sm:rounded-xl p-4 sm:p-6 mt-4 sm:mt-6">
                       <div className="flex items-start">
-                        <CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-green-600 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
                         <div>
-                          <p className="text-green-800 font-medium mb-2">What happens now?</p>
-                          <ul className="text-green-700 text-sm space-y-1">
+                          <p className="text-sm sm:text-base text-green-800 font-medium mb-2">What happens now?</p>
+                          <ul className="text-xs sm:text-sm text-green-700 space-y-1">
                             <li>• Click "Login to ERP" to test your automated login</li>
                             <li>• QuickERP will handle credentials, security questions, and OTP automatically</li>
                             <li>• Your session will be ready in seconds, not minutes!</li>
@@ -441,16 +441,16 @@ export default function SetupGuidePage() {
         </section>
 
         {/* Troubleshooting Section */}
-        <section className="py-16 px-4 bg-white">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+        <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
+          <div className="max-w-full sm:max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12 text-center bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent px-2">
               Troubleshooting & Tips
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">Common Issues & Solutions</h3>
-                <ul className="text-slate-700 space-y-3 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-200">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">Common Issues & Solutions</h3>
+                <ul className="text-slate-700 space-y-2 sm:space-y-3 text-xs sm:text-sm">
                   <li><strong>Login fails or unknown error:</strong> First try disconnecting Gmail from extension settings, then reconnect. If still failing, completely redo the setup process</li>
                   <li><strong>OTP not found:</strong> Ensure Gmail is connected and you receive ERP emails there. Check spam folder for OTP emails</li>
                   <li><strong>Security questions fail:</strong> Make sure questions and answers match exactly (case-sensitive). Try logging in manually once to verify</li>
@@ -461,9 +461,9 @@ export default function SetupGuidePage() {
                 </ul>
               </div>
               
-              <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl p-6 border border-emerald-200">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">Pro Tips & Best Practices</h3>
-                <ul className="text-slate-700 space-y-3 text-sm">
+              <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-emerald-200">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">Pro Tips & Best Practices</h3>
+                <ul className="text-slate-700 space-y-2 sm:space-y-3 text-xs sm:text-sm">
                   <li><strong>Test first:</strong> Try manual login once to verify your credentials work before setting up automation</li>
                   <li><strong>Gmail setup:</strong> Use the same Gmail account where you receive ERP OTP emails for best results</li>
                   <li><strong>Security questions:</strong> Copy-paste questions directly from ERP to avoid typos. Answers are case-sensitive</li>
