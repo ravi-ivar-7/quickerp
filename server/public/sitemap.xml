@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://quickerp.vercel.app</loc>
+    <loc>https://quickerp.rknain.com</loc>
     <lastmod>2025-09-14T03:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://quickerp.vercel.app/faqs</loc>
+    <loc>https://quickerp.rknain.com/faqs</loc>
     <lastmod>2025-09-14T03:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://quickerp.vercel.app/contact</loc>
+    <loc>https://quickerp.rknain.com/contact</loc>
     <lastmod>2025-09-14T03:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://quickerp.vercel.app/privacy</loc>
+    <loc>https://quickerp.rknain.com/privacy</loc>
     <lastmod>2025-09-14T03:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://quickerp.vercel.app/terms</loc>
+    <loc>https://quickerp.rknain.com/terms</loc>
     <lastmod>2025-09-14T03:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

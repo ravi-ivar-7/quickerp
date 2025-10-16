@@ -25,8 +25,7 @@
         "src/window/screens/*.html",
         "src/window/styles/*.css",
         "src/window/dialogs/*.js",
-        "src/window/dialogs/*.html",
-        "docs/privacy.md"
+        "src/window/dialogs/*.html"
       ],
       "matches": ["<all_urls>"]
     }
