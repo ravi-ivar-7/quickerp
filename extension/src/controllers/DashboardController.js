@@ -16,6 +16,7 @@ export class DashboardController {
         await this.loadDashboardData();
         await this.checkERPSession();
         await this.checkVersion();
+        await this.checkShortcutBanner();
         this.setupEventListeners();
     }
 
@@ -69,6 +70,46 @@ export class DashboardController {
             }
         } catch (error) {
             console.error('Version check failed:', error);
+        }
+    }
+
+    async checkShortcutBanner() {
+        const SHORTCUT_DISMISSED_KEY = 'shortcut_banner_dismissed';
+        
+        try {
+            const result = await chrome.storage.local.get(SHORTCUT_DISMISSED_KEY);
+            const isDismissed = result[SHORTCUT_DISMISSED_KEY] || false;
+            
+            const shortcutInfo = document.getElementById('shortcut-info');
+            if (shortcutInfo) {
+                if (isDismissed) {
+                    shortcutInfo.classList.add('hidden');
+                } else {
+                    shortcutInfo.classList.remove('hidden');
+                }
+            }
+        } catch (error) {
+            console.error('Failed to check shortcut banner state:', error);
+            // On error, show the banner by default
+            const shortcutInfo = document.getElementById('shortcut-info');
+            if (shortcutInfo) {
+                shortcutInfo.classList.remove('hidden');
+            }
+        }
+    }
+
+    async dismissShortcutBanner() {
+        const SHORTCUT_DISMISSED_KEY = 'shortcut_banner_dismissed';
+        
+        try {
+            await chrome.storage.local.set({ [SHORTCUT_DISMISSED_KEY]: true });
+            
+            const shortcutInfo = document.getElementById('shortcut-info');
+            if (shortcutInfo) {
+                shortcutInfo.classList.add('hidden');
+            }
+        } catch (error) {
+            console.error('Failed to dismiss shortcut banner:', error);
         }
     }
 
@@ -170,6 +211,10 @@ export class DashboardController {
         // Setup collapsible links
         const linksHeader = document.getElementById('links-header');
         linksHeader?.addEventListener('click', () => this.toggleLinksSection());
+
+        // Setup shortcut banner dismiss button
+        const dismissBtn = document.getElementById('shortcut-dismiss');
+        dismissBtn?.addEventListener('click', () => this.dismissShortcutBanner());
     }
 
     async startLogin() {

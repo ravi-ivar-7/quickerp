@@ -43,6 +43,15 @@
       "128": "src/assets/icons/icon-128.png"
     }
   },
+  "commands": {
+    "open-quickerp": {
+      "suggested_key": {
+        "default": "Ctrl+Q",
+        "mac": "Command+Q"
+      },
+      "description": "Open QuickERP extension"
+    }
+  },
   "oauth2": {
     "client_id": "1065321680265-03ikhi7o4dar8ts57vf4dcsrsqf5b8qh.apps.googleusercontent.com",
     "scopes": [
