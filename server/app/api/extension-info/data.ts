@@ -1,10 +1,10 @@
 export const extensionInfo = {
-  latestVersion: "1.4.0",
+  latestVersion: "1.3.0",
   minimumVersion: "1.0.0",
   releaseDate: "2025-10-16",
   downloadUrl: "https://chromewebstore.google.com/detail/quickerp/gafmfinhhfaocnchccamogkeemjfboin",
   changelog: {
-    "1.4.0": {
+    "1.3.0": {
       date: "2025-10-16",
       changes: [
         "Updated OAuth client configuration",

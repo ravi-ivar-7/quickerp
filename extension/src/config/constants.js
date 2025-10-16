@@ -41,7 +41,7 @@ export const GITHUB_CONFIG = {
 };
 
 export const SITE_CONFIG = {
-    SITE_URL: 'http://localhost:3000',  // 'https://quickerp.rknain.com',
+    SITE_URL:'https://quickerp.rknain.com', // 'http://localhost:3000',  // 
     EXTENSION_URL: 'https://chromewebstore.google.com/detail/quickerp/gafmfinhhfaocnchccamogkeemjfboin',
     CONTACT_EMAIL: 'quickerp@rknain.com',
     HOME_PATH: '',
