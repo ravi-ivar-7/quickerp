@@ -51,21 +51,21 @@ export const extensionInfo = {
       validUntil: "2026-11-16"
     },
     {
-      id: "welcome-message",
+      id: "chrome-store-review",
       type: "info",
-      title: "Welcome to QuickERP!",
-      message: "Thank you for using QuickERP. For any issues or feedback, visit our GitHub repository.",
+      title: "Enjoying QuickERP?",
+      message: "Help us improve by leaving a review on the Chrome Web Store! Your feedback helps other users discover QuickERP.",
       buttons: [
         {
-          text: "Report Issue",
-          link: "https://github.com/ravi-ivar-7/quickerp/issues",
+          text: "Rate on Chrome Store",
+          link: "https://chromewebstore.google.com/detail/quickerp/gafmfinhhfaocnchccamogkeemjfboin/reviews",
           type: "primary"
         }
       ],
       dismissible: true,
       priority: "low",
       validFrom: "2024-01-01",
-      validUntil: "2026-12-31"
+      validUntil: "2031-12-31"
     }
   ],
   features: {
