@@ -15,7 +15,61 @@ export class DashboardController {
         
         await this.loadDashboardData();
         await this.checkERPSession();
+        await this.checkVersion();
         this.setupEventListeners();
+    }
+
+    async checkVersion() {
+        try {
+            const { VersionService } = await import('../services/VersionService.js');
+            const versionInfo = await VersionService.checkVersion();
+            
+            // Update version display
+            const versionElement = document.getElementById('current-version');
+            const statusElement = document.getElementById('version-status');
+            if (versionElement) {
+                versionElement.textContent = versionInfo.currentVersion;
+            }
+            
+            if (statusElement && versionInfo.isOutdated) {
+                const changelog = versionInfo.changelog;
+                const isBreaking = changelog?.breaking || false;
+                const isCritical = changelog?.critical || false;
+
+                let badgeText = `⬆️ Update to v${versionInfo.latestVersion}`;
+                let badgeClass = 'version-status outdated';
+                let tooltip = `New version ${versionInfo.latestVersion} available. Click to view details.`;
+
+                if (isCritical && isBreaking) {
+                    badgeText = `⚠️ Critical + Breaking Update to v${versionInfo.latestVersion}`;
+                    badgeClass = 'version-status critical';
+                    tooltip = 'This update contains both critical and breaking changes. Click to view details.';
+                } else if (isCritical) {
+                    badgeText = `🔴 Critical Update to v${versionInfo.latestVersion}`;
+                    badgeClass = 'version-status critical';
+                    tooltip = 'Critical security update required.';
+                } else if (isBreaking) {
+                    badgeText = `⚠️ Breaking Changes in v${versionInfo.latestVersion}`;
+                    badgeClass = 'version-status critical';
+                    tooltip = 'This update contains breaking changes. Click to view details.';
+                }
+
+                statusElement.textContent = badgeText;
+                statusElement.className = badgeClass;
+                statusElement.title = tooltip;
+                statusElement.style.cursor = 'pointer';
+                statusElement.addEventListener('click', () => {
+                    const updateUrl = `${versionInfo.support?.website || 'https://quickerp.rknain.com'}/updates/v${versionInfo.latestVersion}`;
+                    window.open(updateUrl, '_blank');
+                });
+            } else if (statusElement) {
+                statusElement.textContent = '✓ Up to date';
+                statusElement.className = 'version-status latest';
+                statusElement.title = 'You are running the latest version';
+            }
+        } catch (error) {
+            console.error('Version check failed:', error);
+        }
     }
 
     async checkPrivacyPolicy() {
@@ -63,9 +117,15 @@ export class DashboardController {
     updateStatusIndicatorText(text) {
         const statusText = document.querySelector('.status-text');
         const statusDot = document.querySelector('.status-dot');
+        const btnStatus = document.querySelector('.btn-status');
         
         if (statusText) {
             statusText.textContent = text;
+        }
+        
+        // Also update button status
+        if (btnStatus) {
+            btnStatus.textContent = text;
         }
         
         // Update dot color based on status

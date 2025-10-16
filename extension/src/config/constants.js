@@ -41,14 +41,15 @@ export const GITHUB_CONFIG = {
 };
 
 export const SITE_CONFIG = {
-    SITE_URL: 'https://quickerp.rknain.com',
+    SITE_URL: 'http://localhost:3000',  // 'https://quickerp.rknain.com',
     EXTENSION_URL: 'https://chromewebstore.google.com/detail/quickerp/gafmfinhhfaocnchccamogkeemjfboin',
-    CONTACT_EMAIL: 'quickerp.rknain.com',
+    CONTACT_EMAIL: 'quickerp@rknain.com',
     HOME_PATH: '',
     CONTACT_PATH: '/contact',
     FAQS_PATH: '/faqs',
     PRIVACY_PATH: '/privacy',
-    OAUTH_SETUP_PATH: '/oauth-setup'
+    OAUTH_SETUP_PATH: '/blogs/oauth',
+    EXTENSION_SETUP_PATH: '/blogs/setup'
 };
 
 export const ERROR_MESSAGES = {

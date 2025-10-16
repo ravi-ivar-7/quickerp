@@ -20,6 +20,9 @@ export class NavController {
             navContainer.innerHTML = html;
             
             this.setupNavEventListeners();
+            
+            // Initialize notifications after navbar is loaded
+            await this.app.getController('app').initNotifications();
         } catch (error) {
             console.error('Failed to load navbar:', error);
         }

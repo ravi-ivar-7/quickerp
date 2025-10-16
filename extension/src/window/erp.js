@@ -74,6 +74,9 @@ class ERPApp {
                 await controller.onScreenLoad(data);
             }
 
+            // Process links in the newly loaded screen
+            await this.populateGitHubLinks();
+
         } catch (error) {
             console.error(`Failed to navigate to ${screenName}:`, error);
             this.showError(`Failed to load ${screenName} screen`);

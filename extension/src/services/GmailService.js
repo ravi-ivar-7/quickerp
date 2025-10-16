@@ -4,6 +4,17 @@ import { CredentialService } from './CredentialService.js';
 export class GmailService {
     static async authenticate() {
         try {
+
+            try {
+                const existingToken = await chrome.identity.getAuthToken({ interactive: false });
+                if (existingToken) {
+                    await chrome.identity.removeCachedAuthToken({ token: existingToken });
+                }
+            } catch (e) {
+                // No existing token, that's fine
+            }
+            
+            // Clear all cached tokens first
             await chrome.identity.clearAllCachedAuthTokens();
             
             const token = await chrome.identity.getAuthToken({ interactive: true });
@@ -11,7 +22,6 @@ export class GmailService {
                 throw new Error('Authentication failed - no token received');
             }
             
-            console.log('Token received:', typeof token, token);
             
             // Validate required permissions
             await this.validateRequiredPermissions(token);
@@ -28,36 +38,46 @@ export class GmailService {
             return gmailData;
         } catch (error) {
             console.error('Gmail authentication error details:', error);
+            
+            // Handle specific error cases
             if (error.message.includes('Gmail access is required')) {
                 throw error;
             }
             if (error.message.includes('OAuth2 not granted or revoked')) {
-                throw new Error('Gmail access was denied. Please grant Gmail permissions to use QuickERP.');
+                throw new Error('Gmail access was denied or revoked.\n\nTo fix this:\n1. Visit: https://myaccount.google.com/permissions\n2. Remove "QuickERP" from the list\n3. Try connecting Gmail again');
             }
             if (error.message.includes('The OAuth client was not found')) {
-                throw new Error('OAuth configuration error. Please check the extension setup.');
+                throw new Error('OAuth client not found. Please verify the client ID is correctly configured in Google Cloud Console.');
             }
+            if (error.message.includes('Authorization page could not be loaded')) {
+                throw new Error('Gmail connection failed.\n\nIf you previously used an older version:\n1. Visit: https://myaccount.google.com/permissions\n2. Remove "QuickERP" from connected apps\n3. Try connecting again\n\nOtherwise, contact support.');
+            }
+            
             throw new Error(`${ERROR_MESSAGES.GMAIL_AUTH_FAILED}: ${error.message}`);
         }
     }
 
     static async validateRequiredPermissions(token) {
         const actualToken = typeof token === 'object' ? token.token : token;
+                
         
         // Test Gmail API access
         try {
             const testResponse = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=1', {
                 headers: { 'Authorization': `Bearer ${actualToken}` }
-            });
+            });            
             
             if (!testResponse.ok) {
                 if (testResponse.status === 403) {
-                    throw new Error('Gmail access is required for QuickERP to read OTP emails. Please grant email permissions and try again.');
+                    throw new Error('Gmail read permission was not granted. Please click "Allow" for all permissions when connecting Gmail.');
                 }
-                throw new Error(`Gmail API access failed: ${testResponse.status}`);
-            }
+                if (testResponse.status === 401) {
+                    throw new Error('Authentication token is invalid. Please try connecting Gmail again.');
+                }
+                throw new Error(`Gmail API access failed with status ${testResponse.status}. Please ensure Gmail API is enabled in Google Cloud Console.`);
+            }            
         } catch (error) {
-            if (error.message.includes('Gmail access is required')) {
+            if (error.message.includes('Gmail') || error.message.includes('Authentication')) {
                 throw error;
             }
             throw new Error('Gmail access is required for QuickERP to function. Please ensure you grant email permissions during authentication.');

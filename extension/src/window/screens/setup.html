@@ -2,6 +2,11 @@
     <div class="setup-container">
         <div class="setup-header">
             <h1>Setup QuickERP</h1>
+            <div class="setup-guide-link">
+                <a href="#" data-site-path="EXTENSION_SETUP_PATH" target="_blank" class="guide-link">
+                    📖 View Setup Guide
+                </a>
+            </div>
             <div class="setup-progress">
                 <div class="progress-dots">
                     <span class="dot active" data-step="1"></span>
@@ -54,12 +59,58 @@
                 </div>
                 <div class="gmail-setup">
                     <div class="info-box">
-                        <p>Connect Gmail to automatically retrieve OTP codes during login.</p>
-                        <p class="oauth-info">Read-only access • Secure storage • Revocable anytime</p>
-                        <div class="gmail-requirement">
-                            <p class="requirement-text">⚠️ Only <strong>@gmail.com</strong> accounts are supported</p>
+                        <div class="info-header">
+                            <span class="info-icon">📧</span>
+                            <strong>Gmail Connection</strong>
+                        </div>
+                        <div class="info-content">
+                            <p>Connect Gmail to automatically retrieve OTP codes during login.</p>
+                            <div class="info-features">
+                                <span class="feature-item">🔒 Read-only access</span>
+                                <span class="feature-item">💾 Secure storage</span>
+                                <span class="feature-item">🔄 Revocable anytime</span>
+                            </div>
+                            <div class="info-requirement">
+                                <p>⚠️ Only <strong>@gmail.com</strong> accounts are supported</p>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="warning-box">
+                        <div class="warning-header">
+                            <span class="warning-icon">⚠️</span>
+                            <strong>Security Warning Expected</strong>
+                        </div>
+                        <div class="warning-content">
+                            <p>Google will show a security warning saying <strong>"This app isn't verified"</strong>. This is normal for unverified applications.</p>
+                            <div class="warning-steps">
+                                <p><strong>To proceed:</strong></p>
+                                <ol>
+                                    <li>Click <strong>"Advanced"</strong> on the warning screen</li>
+                                    <li>Click <strong>"Go to QuickERP (unsafe)"</strong></li>
+                                    <li>Continue with the sign-in process</li>
+                                    <li>Grant the requested permissions</li>
+                                </ol>
+                            </div>
+                            <div class="warning-explanation">
+                                <p><strong>Why this warning?</strong></p>
+                                <p>QuickERP is safe and open-source. The warning appears because we haven't completed Google's verification process. Your data is processed locally and never shared externally.</p>
+                            </div>
+                            <div class="warning-note">
+                                <p><strong>⚠️ Upgrading from an older version?</strong></p>
+                                <p>If Gmail connection fails, remove old permissions first:</p>
+                                <ol>
+                                    <li>Visit <a href="https://myaccount.google.com/permissions" target="_blank" class="permission-link">Google Account Permissions</a></li>
+                                    <li>Find and remove "QuickERP" from the list</li>
+                                    <li>Come back and try connecting again</li>
+                                </ol>
+                            </div>
+                            <div class="warning-link">
+                                <p>📖 <a href="https://quickerp.rknain.com/blogs/setup" target="_blank" class="blog-link">View complete setup guide with screenshots</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="gmail-actions">
                         <button id="gmail-connect" class="btn-primary">
                             <span>🔗 Connect Gmail</span>
@@ -73,10 +124,16 @@
             </div>
             
         </div>
-        
         <div class="setup-navigation sticky-bottom">
-            <button id="back-btn" class="btn-secondary" disabled>Back</button>
-            <button id="next-btn" class="btn-primary">Next</button>
+            <div class="nav-top-row">
+                <div class="version-info">
+                    <span class="version-text">v<span id="setup-version">1.3.0</span></span>
+                    <span class="version-status" id="setup-version-status"></span>
+                </div>
+            </div>
+            <div class="nav-bottom-row">
+                <button id="back-btn" class="btn-secondary" disabled>Back</button>
+                <button id="next-btn" class="btn-primary">Next</button>
+            </div>
         </div>
     </div>
-</div>

@@ -1,13 +1,26 @@
 import { StorageService } from '../services/StorageService.js'; 
 import { GmailService } from '../services/GmailService.js';
+import { NotificationController } from './NotificationController.js';
 
 export class AppController {
     constructor(app) {
         this.app = app;
+        this.notificationController = null;
     }
 
     async init() {
         await this.loadUserInfo();
+    }
+
+    async initNotifications() {
+        try {
+            if (!this.notificationController) {
+                this.notificationController = new NotificationController(this.app);
+            }
+            await this.notificationController.init();
+        } catch (error) {
+            console.error('Failed to initialize notifications:', error);
+        }
     }
 
     async isValidSetup() {

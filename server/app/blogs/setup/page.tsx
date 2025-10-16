@@ -334,7 +334,7 @@ export default function SetupGuidePage() {
                 </div>
               </div>
               
-              <div className="bg-blue-50 border border-blue-200 rounded-lg sm:rounded-xl p-4 sm:p-6">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg sm:rounded-xl p-4 sm:p-6 mb-4 sm:mb-6">
                 <div className="flex items-start">
                   <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
                   <div>
@@ -344,6 +344,28 @@ export default function SetupGuidePage() {
                       processes everything locally, and only accesses your Gmail to read OTP emails from the ERP system. 
                       The warning appears because we haven't gone through Google's verification process yet.
                     </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-amber-50 border border-amber-200 rounded-lg sm:rounded-xl p-4 sm:p-6">
+                <div className="flex items-start">
+                  <AlertTriangle className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm sm:text-base text-amber-800 font-medium mb-2">Upgrading from an older version?</p>
+                    <p className="text-xs sm:text-sm text-amber-700 leading-relaxed mb-3">
+                      If you're upgrading from a previous version of QuickERP and Gmail connection fails, you need to remove the old app permissions first.
+                    </p>
+                    <div className="text-xs sm:text-sm text-amber-700">
+                      <p className="font-semibold mb-2">Follow these steps:</p>
+                      <ol className="list-decimal list-inside space-y-1 ml-2">
+                        <li>Visit <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" className="text-amber-900 underline font-medium hover:text-amber-950">Google Account Permissions</a></li>
+                        <li>Find "QuickERP" in the list of connected apps</li>
+                        <li>Click on it and select "Remove Access"</li>
+                        <li>Return to the extension and click "Connect Gmail" again</li>
+                        <li>Grant all the requested permissions</li>
+                      </ol>
+                    </div>
                   </div>
                 </div>
               </div>

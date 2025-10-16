@@ -21,7 +21,6 @@
                 </div>
                 <div class="card-body">
                     <div class="session-summary">
-                        <div class="session-icon">⚡</div>
                         <div class="session-content">
                             <p class="session-title">Continue with Active Session</p>
                             <p class="session-subtitle">Your ERP session is authenticated and ready to use</p>
@@ -31,7 +30,6 @@
                     <div class="quick-actions">
                         <button id="use-session-btn" class="btn-quick-access">
                             <div class="btn-content">
-                                <span class="btn-icon">🚀</span>
                                 <div class="btn-text-group">
                                     <span class="btn-primary-text">Open ERP</span>
                                     <span class="btn-secondary-text">Open ERP Portal with saved session</span>
@@ -40,7 +38,6 @@
                         </button>
                         <button id="view-credentials-btn" class="btn-quick-access btn-view-credentials">
                             <div class="btn-content">
-                                <span class="btn-icon">👁️</span>
                                 <div class="btn-text-group">
                                     <span class="btn-primary-text">View Credentials</span>
                                     <span class="btn-secondary-text">Show ERP session details</span>
@@ -68,8 +65,10 @@
                 </div>
                 <div class="card-body">
                     <button id="login-btn" class="btn-primary btn-large">
-                        <span class="btn-icon">🚀</span>
-                        <span class="btn-text">Login to ERP</span>
+                        <div class="btn-text-container">
+                            <span class="btn-text">Login to ERP</span>
+                            <span class="btn-status">Ready</span>
+                        </div>
                     </button>
                     <div class="login-progress hidden">
                         <div class="progress-bar">
@@ -96,7 +95,6 @@
                         <div class="login-actions hidden">
                             <div class="polling-status hidden">
                                 <div class="polling-info">
-                                    <span class="polling-icon">⏳</span>
                                     <span id="polling-message" class="polling-text">Retrieving OTP from Gmail...</span>
                                 </div>
                                 <div class="polling-details">
@@ -129,7 +127,7 @@
             
             <div class="links-card">
                 <div class="card-header collapsible-header" id="links-header">
-                    <h3>📚 Important Links</h3>
+                    <h3>Important Links</h3>
                     <span class="chevron collapsed">▼</span>
                 </div>
                 <div class="card-body collapsed" id="links-content">
@@ -174,8 +172,16 @@
                             </div>
                         </a>
                         
-                        <a href="#" data-site-path="OAUTH_SETUP_PATH" target="_blank" class="link-item">
+                        <a href="#" data-site-path="EXTENSION_SETUP_PATH" target="_blank" class="link-item">
                             <span class="link-icon">⚙️</span>
+                            <div class="link-content">
+                                <span class="link-title">Setup Guide</span>
+                                <span class="link-desc">Complete setup instructions</span>
+                            </div>
+                        </a>
+                        
+                        <a href="#" data-site-path="OAUTH_SETUP_PATH" target="_blank" class="link-item">
+                            <span class="link-icon">🔧</span>
                             <div class="link-content">
                                 <span class="link-title">OAuth Setup</span>
                                 <span class="link-desc">Configure Google OAuth</span>
@@ -199,6 +205,11 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            
+            <div class="version-info">
+                <span class="version-text">v<span id="current-version">1.3.0</span></span>
+                <span class="version-status" id="version-status"></span>
             </div>
         </div>
         

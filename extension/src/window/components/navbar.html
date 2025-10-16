@@ -8,9 +8,29 @@
             <span class="nav-icon">🏠</span>
             <span class="nav-text">Dashboard</span>
         </button>
+       
         <button class="nav-item" data-screen="settings">
             <span class="nav-icon">⚙️</span>
             <span class="nav-text">Settings</span>
         </button>
+        <button class="nav-item" id="notification-nav-btn">
+            <span class="nav-icon">🔔</span>
+            <span class="nav-text">Notifications</span>
+            <span class="notification-badge hidden" id="notification-badge">0</span>
+        </button>
     </div>
 </nav>
+
+<!-- Notification Panel -->
+<div class="notification-panel hidden" id="notification-panel">
+    <div class="notification-header">
+        <h3>Notifications</h3>
+        <button id="close-notifications" class="icon-btn-small" title="Close">✕</button>
+    </div>
+    <div class="notification-list" id="notification-list">
+        <div class="notification-empty">
+            <span class="empty-icon">🔔</span>
+            <p>No notifications</p>
+        </div>
+    </div>
+</div>
