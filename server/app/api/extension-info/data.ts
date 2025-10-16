@@ -35,13 +35,13 @@ export const extensionInfo = {
       message: "If you're upgrading from an older version, you may need to reconnect Gmail. Visit Google Account Permissions and remove old QuickERP access, then reconnect.",
       buttons: [
         {
-          text: "View Setup Guide",
-          link: "https://quickerp.rknain.com/blogs/setup",
+          text: "View Updates and Changes",
+          link: "https://quickerp.rknain.com/updates/v1.3.0",
           type: "primary"
         },
         {
-          text: "Google Permissions",
-          link: "https://myaccount.google.com/permissions",
+          text: "View Setup Guide",
+          link: "https://quickerp.rknain.com/blogs/setup",
           type: "secondary"
         }
       ],
