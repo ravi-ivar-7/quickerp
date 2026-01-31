@@ -1,22 +1,16 @@
+// Setup side panel behavior
+chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true })
+    .catch((error) => console.error(error));
+
 // Handle keyboard shortcuts
 chrome.commands.onCommand.addListener((command) => {
     if (command === 'open-quickerp') {
-        chrome.windows.create({
-            url: 'src/window/index.html',
-            type: 'popup',
-            width: 480,
-            height: 800
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            if (tabs.length > 0) {
+                chrome.sidePanel.open({ windowId: tabs[0].windowId });
+            }
         });
     }
-});
-
-chrome.action.onClicked.addListener(() => {
-    chrome.windows.create({
-        url: 'src/window/index.html',
-        type: 'popup',
-        width: 480,
-        height: 800
-    });
 });
 
 // Handle messages from content scripts

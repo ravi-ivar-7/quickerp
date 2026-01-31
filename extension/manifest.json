@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "QuickERP",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Fast, secure login for IIT Kharagpur ERP with automated OTP retrieval",
   "icons": {
     "16": "src/assets/icons/icon-16.png",
@@ -12,8 +12,12 @@
   "permissions": [
     "storage",
     "identity",
-    "identity.email"
+    "identity.email",
+    "sidePanel"
   ],
+  "side_panel": {
+    "default_path": "src/window/index.html"
+  },
   "host_permissions": [
     "https://erp.iitkgp.ac.in/*",
     "https://accounts.google.com/*",
@@ -27,7 +31,9 @@
         "src/window/dialogs/*.js",
         "src/window/dialogs/*.html"
       ],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ],
   "background": {

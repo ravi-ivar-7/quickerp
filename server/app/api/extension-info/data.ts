@@ -1,9 +1,17 @@
 export const extensionInfo = {
-  latestVersion: "1.3.0",
+  latestVersion: "1.4.0",
   minimumVersion: "1.0.0",
-  releaseDate: "2025-10-16",
+  releaseDate: "2026-01-31",
   downloadUrl: "https://chromewebstore.google.com/detail/quickerp/gafmfinhhfaocnchccamogkeemjfboin",
   changelog: {
+    "1.4.0": {
+      date: "2026-01-31",
+      changes: [
+        "Updated to open in sidepanel"
+      ],
+      breaking: false,
+      critical: false
+    },
     "1.3.0": {
       date: "2025-10-16",
       changes: [
@@ -15,40 +23,19 @@ export const extensionInfo = {
       ],
       breaking: true,
       critical: true
-    },
-    "1.2.0": {
-      date: "2024-10-01",
-      changes: [
-        "Improved OTP extraction",
-        "Better error handling",
-        "UI improvements"
-      ],
-      breaking: false,
-      critical: false
     }
   },
   notifications: [
     {
-      id: "oauth-upgrade-2025",
+      id: "erp-maintenance-jan-2026",
       type: "warning",
-      title: "OAuth Configuration Updated",
-      message: "If you're upgrading from an older version, you may need to reconnect Gmail. Visit Google Account Permissions and remove old QuickERP access, then reconnect.",
-      buttons: [
-        {
-          text: "View Updates and Changes",
-          link: "https://quickerp.rknain.com/updates/v1.3.0",
-          type: "primary"
-        },
-        {
-          text: "View Setup Guide",
-          link: "https://quickerp.rknain.com/blogs/setup",
-          type: "secondary"
-        }
-      ],
-      dismissible: true,
+      title: "System Maintenance",
+      message: "The ERP system is currently under maintenance and will be available after 6:00 AM on 1st February 2026. They are performing scheduled maintenance to improve performance, security, and reliability.",
+      buttons: [],
+      dismissible: false,
       priority: "high",
-      validFrom: "2024-10-16",
-      validUntil: "2026-11-16"
+      validFrom: "2026-01-30",
+      validUntil: "2026-02-01T12:00:00"
     },
     {
       id: "chrome-store-review",
