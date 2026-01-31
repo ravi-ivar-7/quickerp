@@ -1,30 +1,8 @@
 export const extensionInfo = {
-  latestVersion: "1.4.0",
+  latestVersion: "1.3.0",
   minimumVersion: "1.0.0",
   releaseDate: "2026-01-31",
   downloadUrl: "https://chromewebstore.google.com/detail/quickerp/gafmfinhhfaocnchccamogkeemjfboin",
-  changelog: {
-    "1.4.0": {
-      date: "2026-01-31",
-      changes: [
-        "Updated to open in sidepanel"
-      ],
-      breaking: false,
-      critical: false
-    },
-    "1.3.0": {
-      date: "2025-10-16",
-      changes: [
-        "Updated OAuth client configuration",
-        "Added upgrade instructions for existing users",
-        "Improved Gmail connection error messages",
-        "Enhanced setup guide with security warnings",
-        "Added status display on login button"
-      ],
-      breaking: true,
-      critical: true
-    }
-  },
   notifications: [
     {
       id: "erp-maintenance-jan-2026",
