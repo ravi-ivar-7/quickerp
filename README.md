@@ -2,7 +2,7 @@
 
 Fast, secure login for IIT Kharagpur ERP with automated OTP retrieval.
 
-## 🚀 Features
+## Features
 
 - **Fully Automated Login**: One-click ERP access after initial setup
 - **Gmail OTP Integration**: Automatic OTP retrieval from Gmail using OAuth2
@@ -12,13 +12,13 @@ Fast, secure login for IIT Kharagpur ERP with automated OTP retrieval.
 - **Responsive Design**: Works on screens from 320px to 1200px
 - **Security Questions**: Dynamic handling of custom security Q&A pairs
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Chrome browser (Manifest V3 compatible)
 - Google Cloud Console project with Gmail API enabled
 - IIT KGP ERP account credentials
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### 1. Google OAuth2 Setup
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
@@ -44,7 +44,7 @@ Fast, secure login for IIT Kharagpur ERP with automated OTP retrieval.
    - Connect your Gmail account (OAuth2 flow)
 3. Setup is complete when you see the dashboard
 
-## 🎯 Usage
+## Usage
 
 ### Automated Login
 1. Open the extension window
